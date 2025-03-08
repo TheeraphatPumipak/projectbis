@@ -17,3 +17,153 @@ body{
     text-align: right; /* จัดข้อความภายในให้ชิดขวา */
     font-size: 16px;
 }
+.profile-info #date {
+    text-align: right; /* จัดข้อความภายในให้ชิดขวา */
+    font-size: 16px;
+    color: crimson;
+}
+
+.container {
+    max-width: 800px;
+    margin: left;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: stretch;
+    justify-content: flex-start; /* จัดให้ชิดซ้าย */
+    align-items: flex-start; /* จัดให้อยู่ระดับเดียวกัน */
+    flex-wrap: nowrap; /* ป้องกัน .time-card และ .cards ไม่ให้ตกแถว */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.header p {
+    margin: 0;
+    color: gray;
+}
+
+.export-btn {
+    border: 1px solid gray;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+}
+
+.cards {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex: 1; /* ให้ขยายเต็มพื้นที่ด้านซ้าย */
+}
+
+.card {
+    flex: 1;
+    min-width: 150px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.red { background-color: #ffe5e5; color: #d9534f; }
+.orange { background-color: #fff3e0; color: #f0ad4e; }
+.green { background-color: #e0f8e0; color: #5cb85c; }
+.purple { background-color: #ede0ff; color: #9370db; }
+.white { background-color: #ffffff; color: #000000; }
+
+.icon {
+    font-size: 30px;
+}
+
+.value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 14px;
+    color: gray;
+}
+
+.change {
+    font-size: 12px;
+}
+
+.time-card {
+    width: 200px; /* ลดขนาด */
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 14px; /* ลดขนาดตัวอักษร */
+    align-self: flex-start; /* จัดให้อยู่ระดับบนสุด */
+}
+
+.time-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.time-card ul {
+    padding: 0;
+    list-style: none;
+    font-size: 12px; /* ลดขนาดตัวอักษรของรายการ */
+}
+
+.time-card li {
+    margin-bottom: 3px;
+}
+
+.shortcut-cards {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.shortcut-card {
+    flex: 1;
+    min-width: 180px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.shortcut-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.shortcut-icon {
+    font-size: 50px;
+    color: #2d73ff;
+}
+
+.shortcut-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* สีของไอคอนแต่ละการ์ด */
+.shortcut-card:nth-child(1) .shortcut-icon { color: #2d73ff; } /* ขาย */
+.shortcut-card:nth-child(2) .shortcut-icon { color: #ff7f00; } /* รายการสั่งซื้อ */
+.shortcut-card:nth-child(3) .shortcut-icon { color: #2ba84a; } /* เช็คยอด */
+.shortcut-card:nth-child(4) .shortcut-icon { color: #0c72b1; } /* รายงาน */
