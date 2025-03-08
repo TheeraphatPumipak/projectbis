@@ -1,36 +1,32 @@
+<!-- resources/views/layouts/app.blade.php -->
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <img src="{{ asset('img/FFLOW LOGO.jpg') }}" alt="">
+        <ul>
+            <li>Menu</li>
+            <li><a href="#"><i class="fas fa-home"></i> หน้าแรก</a></li>
+            <li><a href="#"><i class="fas fa-globe"></i> เชื่อมต่อร้านค้า</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> ขาย</a></li>
+            <li><a href="#"><i class="fas fa-list"></i> รายการสั่งซื้อ</a></li>
+            <li><a href="#"><i class="fas fa-check-circle"></i> เช็คยอด</a></li>
+            <li><a href="#"><i class="fas fa-truck"></i> รับพัสดุ</a></li>
+            <li><a href="#"><i class="fas fa-comments"></i> แชท</a></li>
+            <li><a href="#"><i class="fas fa-search"></i> ค้นหาลูกค้า</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> รายงาน</a></li>
+            <li><a href="#"><i class="fas fa-warehouse"></i> คลังสินค้า</a></li>
+        </ul>
+    </div>
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+    <div class="content">
+        @yield('content') <!-- แสดงเนื้อหาของแต่ละหน้า -->
+    </div>
+</body>
 </html>
