@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<<<<<<< HEAD
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-=======
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
->>>>>>> main
 </head>
 <body>
     <div class="sidebar">
@@ -20,11 +15,7 @@
             <li>Menu</li>
             <li><a href="{{ route('Home') }}"><i class="fas fa-home"></i> หน้าแรก</a></li>
             <li><a href="#"><i class="fas fa-globe"></i> เชื่อมต่อร้านค้า</a></li>
-<<<<<<< HEAD
             <li><a href="{{ route('Sale') }}"><i class="fas fa-shopping-cart"></i> ขาย</a></li>
-=======
-            <li><a href="/sale"><i class="fas fa-shopping-cart"></i> ขาย</a></li>
->>>>>>> main
             <li><a href="#"><i class="fas fa-list"></i> รายการสั่งซื้อ</a></li>
             <li><a href="#"><i class="fas fa-check-circle"></i> เช็คยอด</a></li>
             <li><a href="#"><i class="fas fa-truck"></i> รับพัสดุ</a></li>
