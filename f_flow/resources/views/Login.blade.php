@@ -17,7 +17,7 @@
     <div class="welcome">
         <h1>สวัสดี ยินดีต้อนรับ</h1>
         <p>ยังไม่มีบัญชี?</p><br><br><br>
-        <button type="button" onclick="goToPage('Register.html')">ลงทะเบียน</button>
+        <button type="button" onclick="goToPage('{{ route('Register') }}')">ลงทะเบียน</button>
 
     </div>
     <div class="container">
@@ -32,7 +32,7 @@
                 <input type="text" id="password" placeholder="รหัสผ่าน"></i><br>
             </div>
                 <a href="#">ลืมรหัสผ่าน?</a>
-                <button type="button" onclick="goToPage('Home.html')">เข้าสู่ระบบ</button>
+                <button type="button" onclick="goToPage('{{ route('Home') }}')">เข้าสู่ระบบ</button>
 
             </form>
         </div>

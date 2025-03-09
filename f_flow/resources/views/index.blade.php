@@ -21,8 +21,8 @@
 
       <!-- ส่วนปุ่ม -->
       <div class="buttons">
-         <button type="button" onclick="goToPage('{{ route('login') }}')">เข้าสู่ระบบ</button>
-         <button type="button" onclick="goToPage('{{ route('register') }}')">ลงทะเบียน</button>
+         <button type="button" onclick="goToPage('{{ route('Login') }}')">เข้าสู่ระบบ</button>
+         <button type="button" onclick="goToPage('{{ route('Register') }}')">ลงทะเบียน</button>
       </div>
    </div>
 

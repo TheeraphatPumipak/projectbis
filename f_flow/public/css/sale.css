@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+}
+.table-wrapper {
+    flex: 1;
+    background: transparent;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    
+}
+
+/* ปรับให้ทั้งสองการ์ดกว้างเท่ากัน */
+.table-container,
+.live {
+    flex: 1; /* ให้มีขนาดเท่ากัน */
+    min-width: 0; /* ป้องกันการขยายตัวเกินไป */
+}
+
+/* ปุ่มเพิ่มสินค้า */
+button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    /* ลบการกำหนดค่า top ที่เป็นลบออก */
+    position: static; 
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* ตารางสินค้า */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #3b82f6;
+    color: white;
+    width: 20%;
+}
+
+
+/* ส่วน Live (ด้านขวา) */
+.live {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+/* แถบเมนูด้านบนของ Live */
+.live-header {
+    display: flex;
+    background-color: #3b82f6; /* สีเดียวกับหัวตาราง */
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0; /* มุมมนเฉพาะด้านบน */
+}
+
+.live-header p {
+    flex: 1; /* ทำให้แต่ละ p แบ่งพื้นที่เท่ากัน */
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.live-header p:hover {
+    background-color: #2563eb; /* สีเข้มขึ้นเมื่อ hover */
+}
+
+/* กล่องแสดงคอมเมนต์ (ปรับให้สั้นลง) */
+.comment-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 200px; /* ลดความสูงลงจาก 300px → 200px */
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* รูปแบบของข้อความแชท */
+.comment {
+    background-color: #e5e5e5;
+    padding: 6px 10px;
+    border-radius: 15px;
+    max-width: 30%; /* ลดความกว้างของกล่องข้อความ */
+    word-wrap: break-word;
+    font-size: 14px;
+}
+
+/* ตกแต่งชื่อผู้ใช้ */
+.username {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+}
+
+/* ทำให้ดูเหมือน Bubble Chat */
+.comment::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-right: 8px solid #E5E5EA;
+    border-bottom: 8px solid transparent;
+}

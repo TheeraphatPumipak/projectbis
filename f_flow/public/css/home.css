@@ -1,39 +1,17 @@
 body{
     font-family: Arial, sans-serif;
 }
-.header-container {
-    display: flex;
-    justify-content: space-between; /* จัดให้อยู่คนละฝั่ง */
-    align-items: center; /* จัดให้อยู่ตรงกลางตามแนวแกน Y */
-    width: 100%;
-}
-
-.header-title {
-    text-align: left;
-    font-size: 16px;
-}
-
-.profile-info {
-    text-align: right; /* จัดข้อความภายในให้ชิดขวา */
-    font-size: 16px;
-}
-.profile-info #date {
-    text-align: right; /* จัดข้อความภายในให้ชิดขวา */
-    font-size: 16px;
-    color: crimson;
-}
 
 .container {
-    max-width: 800px;
-    margin: left;
+    max-width: 100%; /* ให้คอนเทนเนอร์ขยายเต็มความกว้าง */
+    margin: 0; /* เอาขอบที่ไม่จำเป็นออก */
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    align-items: stretch;
-    justify-content: flex-start; /* จัดให้ชิดซ้าย */
-    align-items: flex-start; /* จัดให้อยู่ระดับเดียวกัน */
-    flex-wrap: nowrap; /* ป้องกัน .time-card และ .cards ไม่ให้ตกแถว */
+    display: flex;
+    flex-direction: column; /* จัดตำแหน่งเนื้อหาภายในคอนเทนเนอร์ให้เป็นคอลัมน์ */
+    gap: 20px;
 }
 
 .header {
@@ -64,13 +42,13 @@ body{
 .cards {
     display: flex;
     gap: 15px;
-    flex-wrap: wrap;
-    flex: 1; /* ให้ขยายเต็มพื้นที่ด้านซ้าย */
+    flex-wrap: nowrap; /* ป้องกันการ์ดหล่นลง */
+    justify-content: flex-start; /* จัดการ์ดให้เริ่มต้นจากซ้าย */
+    overflow-x: auto; /* ทำให้สามารถเลื่อนการ์ดในแนวนอนเมื่อพื้นที่ไม่พอ */
 }
 
 .card {
-    flex: 1;
-    min-width: 150px;
+    flex: 0 0 200px; /* กำหนดขนาดขั้นต่ำของการ์ดแต่ละใบ */
     background: white;
     padding: 15px;
     border-radius: 10px;
@@ -78,11 +56,110 @@ body{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
 .red { background-color: #ffe5e5; color: #d9534f; }
 .orange { background-color: #fff3e0; color: #f0ad4e; }
 .green { background-color: #e0f8e0; color: #5cb85c; }
 .purple { background-color: #ede0ff; color: #9370db; }
-.white { background-color: #ffffff; color: #000000; }
+.white {
+    flex: 1; /* การ์ดสีขาวจะขยายเต็มพื้นที่ที่เหลือ */
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.white ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.white li {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+/* ซ่อนจุดเฉพาะ "ประเภท" */
+.white li:first-child {
+    list-style: none;
+    padding-left: 0; /* เอาเว้นวรรคด้านหน้าของประเภทออก */
+}
+
+/* แยกตำแหน่งของ span (ประเภท) และ time (ช่วงเวลา) */
+.white li span {
+    flex: 1;
+    text-align: left;
+}
+
+.white li time {
+    flex: 1;
+    text-align: right;
+}
+
+/* ทำให้ "ประเภท" และ "ช่วงเวลา" เป็นตัวหนา */
+.white li:first-child span,
+.white li:first-child time {
+    font-weight: bold;
+}
+
+/* จุดเฉพาะรายการที่ไม่ใช่ "ประเภท" */
+.white li:not(:first-child) {
+    position: relative;
+    padding-left: 20px;
+}
+
+.white li:not(:first-child)::before {
+    content: ''; 
+    width: 8px;
+    height: 8px; 
+    border-radius: 50%;
+    background-color: #4caf50;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.white li:first-child span,
+.white li:first-child time {
+    font-weight: bold;
+}
+.white li::before {
+    content: ''; /* ไม่ต้องการข้อความ */
+    width: 10px; /* ขนาดวงกลม */
+    height: 10px; /* ขนาดวงกลม */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    margin-right: 10px; /* ช่องว่างระหว่างวงกลมและข้อความ */
+    background-color: #4caf50; /* สีของวงกลม - ใช้สีเขียวเป็นค่าเริ่มต้น */
+}
+/* ซ่อนจุดของ "ประเภท" */
+.white li:first-child::before {
+    visibility: hidden;
+}
+
+/* กำหนดสีที่แตกต่างกันสำหรับแต่ละรายการ */
+.white li:nth-child(1)::before {
+    background-color: #ff5733; /* สีแดงสำหรับ "เสื้อ" */
+}
+
+.white li:nth-child(2)::before {
+    background-color: #ff8c00; /* สีส้มสำหรับ "กางเกง" */
+}
+
+.white li:nth-child(3)::before {
+    background-color: #33b5ff; /* สีน้ำเงินสำหรับ "หมวก" */
+}
+
+.white li:nth-child(4)::before {
+    background-color: #4caf50; /* สีเขียวสำหรับ "รองเท้า" */
+}
+
+.white li:nth-child(5)::before {
+    background-color: #ffeb3b; /* สีเหลืองสำหรับ "อุปกรณ์" */
+}
+
+.white li:nth-child(6)::before {
+    background-color: #9c27b0; /* สีม่วงสำหรับ "กระเป๋า" */
+}
 
 .icon {
     font-size: 30px;

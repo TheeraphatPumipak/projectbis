@@ -3,10 +3,12 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     display: flex;
+    padding-top: 60px;  /* เพิ่มพื้นที่ด้านบนเพื่อไม่ให้ถูก navbar บัง */
 }
 .content {
-    margin-left: 260px; /* ขยับเนื้อหาหลักออกจาก sidebar */
-    padding: 20px; /* เพิ่ม padding ถ้าต้องการ */
+    margin-left: 250px;
+    margin-top: 80px;
+    padding: 20px;
     flex: 1;
 }
 
@@ -25,6 +27,7 @@ body {
     text-align: center;
     transition: width 0.3s ease-in-out;
     overflow: hidden;
+    z-index: 0;  /* ทำให้ sidebar อยู่ต่ำกว่า header */
 }
 
 .sidebar img {
@@ -73,3 +76,62 @@ body {
     width: 250px;
 }
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 250px);
+    position: fixed;
+    top: 0;
+    left: 250px; /* เริ่มต้นจากตำแหน่งที่ sidebar จบ */
+    padding: 15px 20px;
+    z-index: 10;
+    background-color: transparent; /* ไม่มีพื้นหลัง */
+    box-shadow: none; /* ไม่มีเงา */
+}
+
+.header-title {
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* จัดให้ชิดขวา */
+    max-width: 180px; /* จำกัดความกว้าง */
+    margin-right: 50px; 
+}
+
+.profile-info p {
+    margin: 2px 0; /* ลดระยะห่างระหว่างบรรทัด */
+    font-size: 14px; /* ลดขนาดตัวอักษรทั้งหมด */
+    text-align: right;
+}
+.profile-info #date {
+    font-size: 12px; /* ลดขนาดตัวอักษรให้เล็กลงอีก */
+    color: crimson;
+    white-space: nowrap;
+}
+.profile-icon {
+    width: 40px; /* ลดขนาดรูปโปรไฟล์ลง */
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 50px; 
+    width: 50px;          /* กำหนดขนาดของวงกลม */
+    height: 50px;         /* กำหนดขนาดของวงกลม */
+    border-radius: 50%;   /* ทำให้เป็นวงกลม */
+    background-color: #5590DF; /* กำหนดสีพื้นหลังของวงกลม */
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.profile-icon img {
+    width: 25px; /* ลดขนาดรูปภายในวงกลม */
+    height: 25px;
+}

@@ -11,13 +11,6 @@
 @extends('layouts.app') <!-- ใช้ layout หลักที่สร้างไว้ -->
 
 @section('content') <!-- กำหนดเนื้อหาใน section content -->
-<div class="header-container">
-    <p class="header-title">F FLOW | หน้าแรก</p>
-    <div class="profile-info">
-        <p>ถึงแล้วหนองบัวลำภู</p>
-        <p id="date">วันหมดอายุการใช้งาน: 10/05/2025 (364 วัน)</p>
-    </div>
-</div>
 <p>ยอดขาย</p>
 <div class="container">
         <!-- ส่วนหัว -->
@@ -61,40 +54,17 @@
             <div class="card white">
             <h3>เวลาในการขาย</h3>
     <ul>
-        <li>เสื้อ - 11:00 - 12:00</li>
-        <li>กางเกง - 12:00 - 13:00</li>
-        <li>หมวก - 13:00 - 14:00</li>
-        <li>รองเท้า - 14:00 - 15:00</li>
-        <li>อุปกรณ์ - 15:00 - 16:00</li>
-        <li>กระเป๋า - 16:00 - 17:00</li>
+    <li><span>ประเภท</span><time>ช่วงเวลา</time></li>
+    <li><span>เสื้อ</span><time>11:00 - 12:00</time></li>
+        <li><span>กางเกง</span><time>12:00 - 13:00</time></li>
+        <li><span>หมวก</span><time>13:00 - 14:00</time></li>
+        <li><span>รองเท้า</span><time>14:00 - 15:00</time></li>
+        <li><span>อุปกรณ์</span><time>15:00 - 16:00</time></li>
+        <li><span>กระเป๋า</span><time>16:00 - 17:00</time></li>
     </ul>
             </div>
-            <!-- <div class="card time-card">
-    <h3>เวลาในการขาย</h3>
-    <ul>
-        <li>เสื้อ - 11:00 - 12:00</li>
-        <li>กางเกง - 12:00 - 13:00</li>
-        <li>หมวก - 13:00 - 14:00</li>
-        <li>รองเท้า - 14:00 - 15:00</li>
-        <li>อุปกรณ์ - 15:00 - 16:00</li>
-        <li>กระเป๋า - 16:00 - 17:00</li>
-    </ul>
-</div> -->
-        </div>
-    </div>
- <!-- ส่วนการ์ดเวลาในการขาย -->
- <!-- <div class="card time-card">
-    <h3>เวลาในการขาย</h3>
-    <ul>
-        <li>เสื้อ - 11:00 - 12:00</li>
-        <li>กางเกง - 12:00 - 13:00</li>
-        <li>หมวก - 13:00 - 14:00</li>
-        <li>รองเท้า - 14:00 - 15:00</li>
-        <li>อุปกรณ์ - 15:00 - 16:00</li>
-        <li>กระเป๋า - 16:00 - 17:00</li>
-    </ul>
-</div> -->
-<p>ทางลัด</p>
+        </div>                                                                                                                                                      
+<b>ทางลัด</b>
  <!-- ส่วนการ์ดทางลัด -->
 <div class="shortcut-cards">
             <div class="shortcut-card">

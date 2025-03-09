@@ -17,7 +17,7 @@
     <div class="welcome">
         <h1>ยินดีต้อนรับกลับ</h1>
         <p>มีบัญชีแล้ว</p><br><br><br>
-        <button type="button" onclick="goToPage('Login.html')">เข้าสู่ระบบ</button>
+        <button type="button" onclick="goToPage('{{ route('Login') }}')">เข้าสู่ระบบ</button>
 
     </div>
     <div class="container">
@@ -36,7 +36,7 @@
                 <i class="fa-solid fa-check-circle"></i>
                 <input type="text" id="comfirmpassword" placeholder="ยืนยันรหัสผ่าน"><br>
             </div>
-            <button type="button" onclick="goToPage('Login.html')">ลงทะเบียน</button>
+            <button type="button" onclick="goToPage('{{ route('Login') }}')">ลงทะเบียน</button>
 
 
             </form>

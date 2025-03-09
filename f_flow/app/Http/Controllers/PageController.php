@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
      // ฟังก์ชันสำหรับหน้า Login
-     public function login()
+     public function Login()
      {
-         return view('login');
+         return view('Login');
      }
  
      // ฟังก์ชันสำหรับหน้า Register
-     public function register()
+     public function Register()
      {
-         return view('register');
+         return view('Register');
      }
 
      // ฟังก์ชันสำหรับหน้า Home
@@ -29,4 +29,10 @@ class PageController extends Controller
     {
         return view('index');
     }
+
+    public function Sale()
+     {
+         return view('Salepage');
+     }
+ 
 }
