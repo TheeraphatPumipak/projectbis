@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateProductWarehousesTable extends Migration {
     public function up() {
         Schema::create('product_warehouses', function (Blueprint $table) {
-            $table->id('idSku');
+            $table->id();
             $table->integer('lot');
             $table->integer('detail');
             $table->integer('cost');

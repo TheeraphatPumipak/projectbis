@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreatePlatformsTable extends Migration {
     public function up() {
         Schema::create('platforms', function (Blueprint $table) {
-            $table->id('idPlatform');
+            $table->id();
             $table->string('platformName', 45);
             $table->timestamps();
         });

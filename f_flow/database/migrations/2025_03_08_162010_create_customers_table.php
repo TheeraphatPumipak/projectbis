@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateCustomersTable extends Migration {
     public function up() {
         Schema::create('customers', function (Blueprint $table) {
-            $table->id('idCustomers');
+            $table->id();
             $table->string('customerName', 225);
             $table->foreignId('platform_idPlatform')->constrained('platforms')->onDelete('cascade');
             $table->timestamps();

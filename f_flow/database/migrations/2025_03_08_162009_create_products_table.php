@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateProductsTable extends Migration {
     public function up() {
         Schema::create('products', function (Blueprint $table) {
-            $table->id('idProduct');
+            $table->id();
             $table->string('productName', 45);
             $table->foreignId('product_category_idCategory')->constrained('product_categories')->onDelete('cascade');
             $table->timestamps();

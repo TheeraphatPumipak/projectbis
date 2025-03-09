@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateProductCategoriesTable extends Migration {
     public function up() {
         Schema::create('product_categories', function (Blueprint $table) {
-            $table->id('idCategory');
+            $table->id();
             $table->string('categoryName', 45);
             $table->timestamps();
         });

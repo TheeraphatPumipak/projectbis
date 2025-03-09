@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateOrdersTable extends Migration {
     public function up() {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id('idOrder');
+            $table->id();
             $table->foreignId('customers_idCustomers')->constrained('customers')->onDelete('cascade');
             $table->integer('amount');
             $table->integer('status');
